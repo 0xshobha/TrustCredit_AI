@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TrustCredit AI — Project Deck</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #0a0e1a; color: #f1f5f9; }
+    .slide { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 60px 80px; position: relative; page-break-after: always; }
+    .slide::after { content: ''; position: absolute; bottom: 0; left: 80px; right: 80px; height: 1px; background: rgba(148,163,184,0.15); }
+    h1 { font-family: 'Outfit', sans-serif; font-size: 3.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 24px; }
+    h2 { font-family: 'Outfit', sans-serif; font-size: 2.2rem; font-weight: 700; margin-bottom: 20px; }
+    h3 { font-family: 'Outfit', sans-serif; font-size: 1.4rem; font-weight: 600; margin-bottom: 12px; }
+    p, li { font-size: 1.1rem; line-height: 1.7; color: #94a3b8; }
+    .gradient { background: linear-gradient(135deg, #06b6d4, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .badge { display: inline-block; padding: 8px 20px; border-radius: 999px; background: rgba(6,182,212,0.12); border: 1px solid rgba(6,182,212,0.2); color: #06b6d4; font-size: 0.9rem; font-weight: 600; margin-bottom: 20px; }
+    .card { background: rgba(15,23,42,0.6); border: 1px solid rgba(148,163,184,0.1); border-radius: 16px; padding: 32px; margin-bottom: 20px; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+    .grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 20px; }
+    .stat-num { font-family: 'Outfit', sans-serif; font-size: 2.5rem; font-weight: 800; }
+    .cyan { color: #06b6d4; }
+    .emerald { color: #10b981; }
+    .purple { color: #8b5cf6; }
+    .amber { color: #f59e0b; }
+    ul { list-style: none; padding: 0; }
+    ul li { padding: 8px 0; padding-left: 24px; position: relative; }
+    ul li::before { content: '→'; position: absolute; left: 0; color: #06b6d4; font-weight: 700; }
+    .flow-arrow { text-align: center; color: #06b6d4; font-size: 1.5rem; margin: 12px 0; }
+    .flow-box { background: rgba(6,182,212,0.08); border: 1px solid rgba(6,182,212,0.2); border-radius: 12px; padding: 16px 24px; text-align: center; color: #f1f5f9; font-weight: 600; }
+    table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+    th { text-align: left; padding: 12px 16px; font-size: 0.8rem; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid rgba(148,163,184,0.1); }
+    td { padding: 14px 16px; border-bottom: 1px solid rgba(148,163,184,0.05); }
+    .tag { display: inline-block; padding: 4px 12px; border-radius: 999px; font-size: 0.8rem; font-weight: 600; margin: 2px; }
+    .tag.t1 { background: rgba(6,182,212,0.12); color: #06b6d4; }
+    .tag.t2 { background: rgba(16,185,129,0.12); color: #10b981; }
+    .tag.t3 { background: rgba(139,92,246,0.12); color: #8b5cf6; }
+    .tag.t4 { background: rgba(245,158,11,0.12); color: #f59e0b; }
+    .subtitle { font-size: 1.3rem; color: #94a3b8; max-width: 700px; line-height: 1.6; }
+    .small { font-size: 0.85rem; color: #64748b; }
+    @media print { .slide { min-height: auto; padding: 40px; } body { background: white; color: #1e293b; } .card { border: 1px solid #e2e8f0; } p, li { color: #475569; } }
+  </style>
+</head>
+<body>
+
+<!-- SLIDE 1: COVER -->
+<div class="slide" style="text-align: center; align-items: center;">
+  <div class="badge">⚡ Built on Creditcoin — BUIDL CTC Hackathon 2026</div>
+  <h1><span class="gradient">TrustCredit AI</span></h1>
+  <p class="subtitle" style="text-align: center;">AI-powered decentralized credit scoring for real-world lending on Creditcoin.</p>
+  <div style="margin-top: 40px;">
+    <span class="tag t1">DeFi</span>
+    <span class="tag t2">RWA</span>
+    <span class="tag t3">AI</span>
+    <span class="tag t4">Creditcoin EVM</span>
+  </div>
+  <p class="small" style="margin-top: 60px;">Team: 0xshobha · March 2026</p>
+</div>
+
+<!-- SLIDE 2: PROBLEM -->
+<div class="slide">
+  <div class="badge">01 — The Problem</div>
+  <h2>1.7 Billion People Are <span class="gradient">Financially Excluded</span></h2>
+  <p class="subtitle" style="margin-bottom: 40px;">Traditional credit systems are centralized, biased, and exclude billions worldwide.</p>
+  <div class="grid-2">
+    <div class="card">
+      <h3>❌ Who Gets Excluded?</h3>
+      <ul>
+        <li>Freelancers & gig workers with no pay stubs</li>
+        <li>Small farmers & micro-businesses</li>
+        <li>People in developing countries</li>
+        <li>Immigrants with no local credit history</li>
+        <li>Anyone without a bank account</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>❌ Why Current Systems Fail</h3>
+      <ul>
+        <li>Credit bureaus are centralized & opaque</li>
+        <li>Scoring algorithms are biased</li>
+        <li>No interoperability across borders</li>
+        <li>Data is siloed and insecure</li>
+        <li>Users don't own their credit data</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 3: SOLUTION -->
+<div class="slide">
+  <div class="badge">02 — The Solution</div>
+  <h2><span class="gradient">TrustCredit AI</span> — Decentralized Trust-Based Lending</h2>
+  <p class="subtitle" style="margin-bottom: 40px;">We combine AI credit scoring with Creditcoin smart contracts to create a transparent, borderless lending system.</p>
+  <div class="grid-4">
+    <div class="card" style="text-align: center;">
+      <div style="font-size: 2.5rem; margin-bottom: 12px;">🧠</div>
+      <h3>AI Scoring</h3>
+      <p>Weighted analysis of on-chain data to generate Trust Scores (0-1000)</p>
+    </div>
+    <div class="card" style="text-align: center;">
+      <div style="font-size: 2.5rem; margin-bottom: 12px;">🔗</div>
+      <h3>On-Chain Reputation</h3>
+      <p>Peer attestations and endorsements stored immutably on Creditcoin</p>
+    </div>
+    <div class="card" style="text-align: center;">
+      <div style="font-size: 2.5rem; margin-bottom: 12px;">💰</div>
+      <h3>Smart Lending</h3>
+      <p>Score-gated loans with tiered interest rates enforced by smart contracts</p>
+    </div>
+    <div class="card" style="text-align: center;">
+      <div style="font-size: 2.5rem; margin-bottom: 12px;">🌍</div>
+      <h3>Global Access</h3>
+      <p>No bank needed — just a wallet to build credit and access loans</p>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 4: HOW IT WORKS -->
+<div class="slide">
+  <div class="badge">03 — How It Works</div>
+  <h2>User Flow</h2>
+  <div style="max-width: 500px; margin: 30px auto;">
+    <div class="flow-box">👛 User Connects Wallet</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-box">🧠 AI Analyzes On-Chain Data</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-box">📊 Trust Score Generated (0-1000)</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-box">📝 Smart Contract Issues Loan</div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-box">✅ Borrower Repays · Score Improves</div>
+  </div>
+</div>
+
+<!-- SLIDE 5: AI SCORING -->
+<div class="slide">
+  <div class="badge">04 — AI Credit Scoring Engine</div>
+  <h2>Trust Score <span class="gradient">Formula</span></h2>
+  <div class="grid-2" style="margin-top: 30px;">
+    <div>
+      <div class="card">
+        <h3>📊 Wallet Activity — 30%</h3>
+        <p>Transaction count, volume, wallet age, unique interactions</p>
+      </div>
+      <div class="card">
+        <h3>✅ Repayment History — 40%</h3>
+        <p>Loans repaid, on-time rate, default history, amounts</p>
+      </div>
+      <div class="card">
+        <h3>🎯 Staking & DeFi — 20%</h3>
+        <p>Staking balance, DeFi positions, liquidity provided, yield</p>
+      </div>
+      <div class="card">
+        <h3>⭐ Reputation — 10%</h3>
+        <p>Peer attestations, DAO memberships, social verification</p>
+      </div>
+    </div>
+    <div>
+      <div class="card">
+        <h3>Interest Rate Tiers</h3>
+        <table>
+          <tr><th>Score</th><th>Rate</th><th>Risk</th></tr>
+          <tr><td class="emerald" style="font-weight:700;">900+</td><td>3.0%</td><td>Low</td></tr>
+          <tr><td class="cyan" style="font-weight:700;">800-899</td><td>4.5%</td><td>Low</td></tr>
+          <tr><td class="cyan" style="font-weight:700;">700-799</td><td>6.0%</td><td>Medium</td></tr>
+          <tr><td class="amber" style="font-weight:700;">600-699</td><td>8.0%</td><td>Medium</td></tr>
+          <tr><td class="amber" style="font-weight:700;">500-599</td><td>10.0%</td><td>High</td></tr>
+          <tr><td style="color:#f43f5e;font-weight:700;">400-499</td><td>12.0%</td><td>Very High</td></tr>
+        </table>
+      </div>
+      <div class="card" style="text-align: center;">
+        <p class="small">OUTPUT EXAMPLE</p>
+        <div class="stat-num cyan" style="margin: 12px 0;">742</div>
+        <p style="color:#f1f5f9; font-weight: 600;">Trust Score — Grade B</p>
+        <p>Loan Limit: $3,500 · Rate: 6% · Low Risk</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 6: SMART CONTRACT -->
+<div class="slide">
+  <div class="badge">05 — Smart Contract</div>
+  <h2>TrustLoan.sol — <span class="gradient">On-Chain Lending</span></h2>
+  <p class="subtitle" style="margin-bottom: 30px;">Solidity smart contract deployed on Creditcoin EVM managing the full loan lifecycle.</p>
+  <div class="grid-3">
+    <div class="card">
+      <h3>Profile Management</h3>
+      <ul>
+        <li>createProfile()</li>
+        <li>updateTrustScore()</li>
+        <li>addAttestation()</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Lending</h3>
+      <ul>
+        <li>depositLiquidity()</li>
+        <li>requestLoan()</li>
+        <li>approveLoan()</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Settlement</h3>
+      <ul>
+        <li>repayLoan()</li>
+        <li>liquidateLoan()</li>
+        <li>withdrawLiquidity()</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card" style="margin-top: 24px;">
+    <h3>Key Features</h3>
+    <div class="grid-2">
+      <ul>
+        <li>Score-gated access (min 400 to apply)</li>
+        <li>Tiered interest rates based on trust score</li>
+        <li>Automatic score reduction on default (-100 pts)</li>
+      </ul>
+      <ul>
+        <li>On-chain reputation attestation system</li>
+        <li>Lender liquidity pool management</li>
+        <li>Full event logging for transparency</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 7: TECH STACK -->
+<div class="slide">
+  <div class="badge">06 — Tech Stack</div>
+  <h2>Architecture</h2>
+  <div class="grid-2" style="margin-top: 30px;">
+    <div class="card">
+      <h3>Frontend</h3>
+      <ul>
+        <li>Next.js 15 + TypeScript</li>
+        <li>TailwindCSS — dark glassmorphism UI</li>
+        <li>RainbowKit — wallet connectivity</li>
+        <li>wagmi + viem — blockchain interactions</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Smart Contracts</h3>
+      <ul>
+        <li>Solidity 0.8.20</li>
+        <li>Hardhat toolchain</li>
+        <li>Creditcoin EVM (Testnet + Mainnet)</li>
+        <li>OpenZeppelin patterns</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>AI Engine</h3>
+      <ul>
+        <li>TypeScript scoring module</li>
+        <li>Weighted multi-factor analysis</li>
+        <li>Risk categorization algorithm</li>
+        <li>Mock data generator for demo</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Backend</h3>
+      <ul>
+        <li>Next.js API routes</li>
+        <li>RESTful endpoints</li>
+        <li>Credit score computation</li>
+        <li>Loan management system</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 8: MARKET -->
+<div class="slide">
+  <div class="badge">07 — Market Opportunity</div>
+  <h2>Massive Addressable Market</h2>
+  <div class="grid-4" style="margin: 40px 0;">
+    <div class="card" style="text-align: center;">
+      <div class="stat-num cyan">$9.3T</div>
+      <p>Global Lending Market</p>
+    </div>
+    <div class="card" style="text-align: center;">
+      <div class="stat-num emerald">1.7B</div>
+      <p>Unbanked People</p>
+    </div>
+    <div class="card" style="text-align: center;">
+      <div class="stat-num purple">$16B</div>
+      <p>RWA Market (2026)</p>
+    </div>
+    <div class="card" style="text-align: center;">
+      <div class="stat-num amber">48%</div>
+      <p>Adults Without Credit Score</p>
+    </div>
+  </div>
+  <div class="card">
+    <h3>Why Creditcoin?</h3>
+    <ul>
+      <li>Purpose-built for real-world credit — perfect chain-product fit</li>
+      <li>EVM compatible — easy smart contract deployment</li>
+      <li>Credit-focused ecosystem — existing user base and partnerships</li>
+      <li>Low transaction costs — viable for micro-lending</li>
+    </ul>
+  </div>
+</div>
+
+<!-- SLIDE 9: ROADMAP -->
+<div class="slide">
+  <div class="badge">08 — Roadmap & Future</div>
+  <h2>Vision: Global Decentralized <span class="gradient">Credit Bureau</span></h2>
+  <div class="grid-2" style="margin-top: 30px;">
+    <div>
+      <div class="card">
+        <h3>Phase 1 — MVP (Now)</h3>
+        <ul>
+          <li>AI credit scoring engine</li>
+          <li>Smart contract lending on Creditcoin</li>
+          <li>Web dashboard + wallet connect</li>
+          <li>Reputation attestation system</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Phase 2 — Growth</h3>
+        <ul>
+          <li>Real on-chain data integration</li>
+          <li>Cross-chain credit portability</li>
+          <li>Mobile-first wallet app</li>
+          <li>Institutional lender onboarding</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="card">
+        <h3>Phase 3 — Scale</h3>
+        <ul>
+          <li>Machine learning credit models</li>
+          <li>Decentralized identity verification</li>
+          <li>Micro-finance for developing countries</li>
+          <li>Governance token + DAO</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Phase 4 — Global</h3>
+        <ul>
+          <li>Multi-chain deployment</li>
+          <li>Credit score NFTs (portable credit)</li>
+          <li>Regulatory compliance framework</li>
+          <li>Partnerships with fintechs & NGOs</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 10: TEAM & LINKS -->
+<div class="slide" style="text-align: center; align-items: center;">
+  <div class="badge">09 — Team & Links</div>
+  <h2>Thank You</h2>
+  <p class="subtitle" style="text-align: center; margin-bottom: 40px;">Enabling fair credit access for everyone, everywhere.</p>
+  <div class="grid-3" style="max-width: 800px;">
+    <div class="card" style="text-align: center;">
+      <div style="font-size: 1.5rem; margin-bottom: 8px;">🌐</div>
+      <h3>Live Demo</h3>
+      <p style="font-size: 0.9rem; word-break: break-all;">ecliptic-magnetar.vercel.app</p>
+    </div>
+    <div class="card" style="text-align: center;">
+      <div style="font-size: 1.5rem; margin-bottom: 8px;">📦</div>
+      <h3>GitHub</h3>
+      <p style="font-size: 0.9rem;">0xshobha/TrustCredit_AI</p>
+    </div>
+    <div class="card" style="text-align: center;">
+      <div style="font-size: 1.5rem; margin-bottom: 8px;">👤</div>
+      <h3>Team</h3>
+      <p style="font-size: 0.9rem;">0xshobha</p>
+    </div>
+  </div>
+  <p class="small" style="margin-top: 60px;">Built with ❤️ for BUIDL CTC Hackathon 2026 · Powered by Creditcoin</p>
+</div>
+
+</body>
+</html>
