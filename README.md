@@ -1,36 +1,155 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏆 TrustCredit AI
 
-## Getting Started
+**AI-powered decentralized credit scoring for real-world lending on Creditcoin.**
 
-First, run the development server:
+> Millions of people cannot access loans because they lack credit history, bank accounts, or financial records. TrustCredit AI solves this by using AI + blockchain to create a decentralized trust-based credit system.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 🔗 Problem
+
+Traditional credit systems are centralized and biased. They exclude:
+- Freelancers & gig workers
+- Small farmers & micro-businesses
+- People in developing countries
+- Anyone without bank records
+
+## 💡 Solution
+
+**TrustCredit AI** creates a decentralized trust-based lending network on Creditcoin.
+
+Users build **on-chain reputation + AI credit score** using:
+- 📊 Wallet activity & transaction patterns
+- ✅ Repayment history
+- 🎯 Staking & DeFi participation
+- ⭐ Peer reputation attestations
+
+Then lenders can safely provide loans through smart contracts.
+
+## 🏗️ Architecture
+
+```
+User Wallet
+     ↓
+AI Credit Score Engine (Trust Score 0-1000)
+     ↓
+Creditcoin Smart Contract (TrustLoan.sol)
+     ↓
+Loan Offer (Score-gated, tiered interest rates)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Trust Score Formula
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+Score = Wallet Activity (30%)
+      + Repayment History (40%)
+      + Staking Balance (20%)
+      + Reputation Score (10%)
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Interest Rate Tiers
 
-## Learn More
+| Score Range | Interest Rate | Risk Level |
+|-------------|--------------|------------|
+| 900+        | 3.0%         | Low        |
+| 800-899     | 4.5%         | Low        |
+| 700-799     | 6.0%         | Medium     |
+| 600-699     | 8.0%         | Medium     |
+| 500-599     | 10.0%        | High       |
+| 400-499     | 12.0%        | Very High  |
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Layer          | Technology                          |
+|---------------|-------------------------------------|
+| Frontend      | Next.js 15, TailwindCSS, TypeScript |
+| Wallet        | RainbowKit, wagmi, viem             |
+| Smart Contract| Solidity 0.8.20, Hardhat            |
+| Blockchain    | Creditcoin EVM                      |
+| AI Engine     | TypeScript credit scoring module    |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📁 Project Structure
 
-## Deploy on Vercel
+```
+trustcredit-ai/
+├── app/
+│   ├── api/
+│   │   ├── credit-score/     # AI scoring endpoint
+│   │   ├── loans/            # Loan management
+│   │   └── reputation/       # Attestation system
+│   ├── dashboard/            # Borrower dashboard
+│   ├── credit-score/         # Score breakdown
+│   ├── apply-loan/           # Loan application
+│   ├── lender-dashboard/     # Lender portfolio
+│   ├── layout.tsx
+│   ├── page.tsx              # Landing page
+│   └── globals.css           # Design system
+├── components/
+│   ├── Navbar.tsx
+│   ├── ScoreGauge.tsx        # Animated score gauge
+│   ├── StatsCard.tsx
+│   └── LoanCard.tsx
+├── contracts/
+│   └── TrustLoan.sol         # Main lending contract
+├── ai-engine/
+│   └── credit-score.ts       # AI scoring engine
+├── scripts/
+│   └── deploy.js             # Contract deployment
+└── hardhat.config.js
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🚀 Getting Started
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Prerequisites
+- Node.js 18+
+- npm
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/trustcredit-ai.git
+cd trustcredit-ai
+
+# Install dependencies
+npm install
+
+# Run the development server
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000).
+
+### Smart Contract
+
+```bash
+# Compile contracts
+npx hardhat compile
+
+# Deploy to Creditcoin Testnet
+npx hardhat run scripts/deploy.js --network creditcoinTestnet
+```
+
+## ✨ Features
+
+- **🧠 AI Credit Scoring** — Weighted analysis of on-chain data
+- **🔗 On-Chain Reputation** — Peer endorsements stored on blockchain
+- **💰 Score-Gated Lending** — Smart contracts enforce trust thresholds
+- **📊 Live Dashboard** — Real-time score tracking and loan management
+- **🌍 Global Access** — No bank account needed
+
+## 🔮 Future Vision
+
+- Global decentralized credit bureau
+- Cross-chain lending protocol
+- Identity verification integration
+- Micro-finance for developing countries
+- Mobile-first wallet app
+
+## 📄 License
+
+MIT License
+
+---
+
+**Built with ❤️ for the Creditcoin Hackathon 2026**
